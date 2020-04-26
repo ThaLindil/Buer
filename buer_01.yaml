@@ -1,0 +1,61 @@
+esphome:
+  name: buer_01
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: <SSID>
+  password: <Password>
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Buer 01 Fallback Hotspot"
+    password: <Password>
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: <Password>
+
+ota:
+  password: <Password>
+
+switch:
+  - platform: gpio
+    pin: GPIO25
+    name: "Living Room Dehumidifier"
+    
+sensor:
+  - platform: adc
+    pin: GPIO32
+    filters:
+      - calibrate_linear:
+          - 0.36 -> 1.00
+          - 0.76 -> 0.00
+    name: "Plant 1"
+    update_interval: 10s
+  - platform: adc
+    pin: GPIO35
+    filters:
+      - calibrate_linear:
+          - 0.36 -> 1.00
+          - 0.76 -> 0.00
+    name: "Plant 2"
+    update_interval: 10s
+  - platform: adc
+    pin: GPIO36
+    filters:
+      - calibrate_linear:
+          - 0.36 -> 1.00
+          - 0.76 -> 0.00
+    name: "Plant 3"
+    update_interval: 10s
+    
+# Example configuration entry
+deep_sleep:
+  run_duration: 10min
+  sleep_duration: 60min
