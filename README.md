@@ -39,3 +39,7 @@ deep_sleep:
   run_duration: 10min
   sleep_duration: 60min
 ```
+## Integrate into hassio
+After restart the ESP you should get a message that a new device was found, after adding the new device you should see something like that.
+
+![Image of Yaktocat](hassio-entity.png)
