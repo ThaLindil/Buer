@@ -1,5 +1,5 @@
 # Buer the flower deamon
-This litte project show how to build an wireless soil moisture. To be flexible about the power for the device we use a solarpanel for daztime and a battery for the night time. The lasstep would pe to integrate the deamon into the Hassio enviroment.
+This little project shows how to build a wireless soil moisture. To be flexible about the power for the device we use a solar panel for daztime and a battery for the night time. The lockstep would be to integrate the demon into the hassio environment.
 ## Items for the setup
 * ESP32 NodeMCU
 * FC-28 Soil moisture
